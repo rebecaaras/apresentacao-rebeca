@@ -17,5 +17,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Cascadia Code, Roboto, Helvetica, sans-serif;
 }
