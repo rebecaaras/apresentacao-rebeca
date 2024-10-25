@@ -1,5 +1,4 @@
 import React from 'react';
-import RoadmapFlow from '../components/RoadmapFlow'; // Importa o componente que criamos
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -24,9 +23,6 @@ export default function Home() {
 
     fetchData();
   }, []);
-
-  // if (error) return <div>{`Erro: ${error}`}</div>;
-  // if (!data) return <div>Carregando...</div>;
 
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-between">
