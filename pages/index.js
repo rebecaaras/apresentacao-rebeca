@@ -1,3 +1,5 @@
+import Navbar from '@/components/nav-bar';
+import Image from 'next/image';
 import React from 'react';
 import { useEffect, useState } from 'react';
 
@@ -26,13 +28,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-between">
-      <nav className="text-orange-950 p-4">
-        <ul className="flex flex-row">
-          <li className="bg-slate-100 text-orange-950 rounded-[10px] p-2 h-10 w-30 hover:bg-orange-950 hover:text-orange-950 text-opacity-60 hover:font-bold hover:bg-opacity-10">Clássicos</li>
-          <li className="bg-slate-100 text-orange-950 rounded-[10px] p-2 h-10 w-30 hover:bg-orange-950 hover:text-orange-950 text-opacity-60 hover:font-bold hover:bg-opacity-10">Especiais</li>
-          <li className="bg-slate-100 text-orange-950 rounded-[10px] p-2 h-10 w-30 hover:bg-orange-950 hover:text-orange-950 text-opacity-60 hover:font-bold hover:bg-opacity-10">Gourmet</li>
-        </ul>
-      </nav>
+      <Navbar></Navbar>
 
       <main className="w-full flex flex-col items-center">
         <header className="w-full bg-slate-100 text-white text-center pb-[15px]">
