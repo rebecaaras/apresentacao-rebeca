@@ -31,7 +31,7 @@ const NewRecipe = () => {
     }, []);
 
     if (!data) {
-        return <div className= "font-[Roboto] text-orange-950">Carregando...</div>;
+        return <div className= "w-full h-[400px] flex flex-col items-center font-[Roboto] text-orange-950">Carregando...</div>;
     }
 
     return(
