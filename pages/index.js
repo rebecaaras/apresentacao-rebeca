@@ -13,7 +13,6 @@ export default function Home() {
       try {
         const response = await fetch('/api/data');
         if (!response.ok) {
-          //throw new Error('Erro ao buscar dados');
           return <div>Carregando dados...</div>
         }
         const result = await response.json();
