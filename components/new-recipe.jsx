@@ -5,30 +5,16 @@ import PageFooter from './page-footer';
 
 const NewRecipe = () => {
     const [data, setData] = useState(null);
-    //const [error, setError] = useState(null);
 
-    useEffect(() => {
+    const getNewRecipe = async() => {
         fetch('/api/data')
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error('Error fetching data'))
-        // const fetchData = async () => {
-        //     try {
-        //         await fetch('/api/data')
-        //            .then(response => response.json())
-        //            .then(data => setData(data))
-        //            .catch(error => console.error('Error fetching data'))
-        //         if (!response.ok) {
-        //             throw new Error('Erro ao buscar dados');
-        //         }
-        //         const result = await response.json();
-        //         console.log(result);
-        //         setData(result);
-        //     } catch (error) {
-        //         setError(error.message);
-        //         console.log(error.message);
-        //     }
-        // }
+      };
+
+    useEffect(() => {
+        getNewRecipe();
     }, []);
 
     if (!data) {
@@ -38,7 +24,6 @@ const NewRecipe = () => {
             </div>
     )
     }
-
     return(
         <>
         <main className="w-full flex flex-col items-center">
@@ -47,14 +32,24 @@ const NewRecipe = () => {
             </header>
             <div className="flex flex-col items-center">
             <div className="max-w-4x1 bg-white p-4 rounded-lg shadow-md border-[2px] border-orange-950 border-opacity-80 mb-[15px]">
-                <h2 className= "font-[Roboto] text-orange-950">{data[0].nome}</h2>
-                <ul className= "font-[Roboto] text-orange-950">
-                    {data[0].ingredientes}
+                <h2 className= "font-[Roboto] text-orange-950 text-[22px] font-semibold">
+                    {data[1].nome}
+                </h2>
+                <ul className= "font-[Roboto] text-orange-950 flex flex-row">
+                    <span className= "font-[Roboto] text-orange-950 font-semibold">Ingredientes:</span>
+                    {data[1].ingredientes.map(ingrediente =>(
+                        <li>&nbsp;{ingrediente},</li>
+                    ))}
                 </ul>
-                <p className= "font-[Roboto] text-orange-950">{data[0].instrucoes}</p>
+                <p className= "font-[Roboto] text-orange-950">
+                <span className= "font-[Roboto] text-orange-950 font-semibold">Instruções:&nbsp;</span>
+                    {data[1].instrucoes}
+                </p>
             </div>
             <div className="p-1">
-                <button className="bg-orange-950 bg-opacity-80 text-white font-[Roboto] rounded-[10px] p-2 h-12 w-30 hover:bg-orange-950 hover:bg-opacity-100 hover:font-bold border-[1px]">Nova receita</button>
+                <button onClick={getNewRecipe} className="bg-orange-950 bg-opacity-80 text-white font-[Roboto] rounded-[10px] p-2 h-12 w-30 hover:bg-orange-950 hover:bg-opacity-100 hover:font-bold border-[1px]">
+                    Nova receita
+                </button>
             </div>
             </div>
         </main>
