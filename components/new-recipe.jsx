@@ -1,7 +1,5 @@
-import Navbar from '@/components/nav-bar';
 import React from "react";
 import { useEffect, useState } from 'react';
-import PageFooter from './page-footer';
 
 const NewRecipe = () => {
     const [data, setData] = useState(null);
@@ -20,7 +18,6 @@ const NewRecipe = () => {
     if (!data) {
         return (<div className="w-full flex flex-col items-center">
                 <h1 className= "h-[350px] font-[Roboto] text-orange-950 flex-start items-center text-[22px]">Carregando...</h1>
-                <PageFooter></PageFooter>
             </div>
     )
     }
@@ -53,11 +50,6 @@ const NewRecipe = () => {
             </div>
             </div>
         </main>
-        <PageFooter></PageFooter>
-        {/* <footer className="bg-slate-100 text-orange-950 rounded-[10px] p-2 h-10 w-30 text-opacity-60 p-[15px] mb-[15px]">
-            <a href="https://github.com/rebecaaras" target="_blank" rel="noopener noreferrer">Visite a página do projeto no GitHub!
-            <i className="fab fa-github" style={{ fontSize: "22px", color: "#43140790" }}></i></a>
-        </footer> */}
         </>
     )
 }

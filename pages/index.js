@@ -1,6 +1,6 @@
 import Navbar from '@/components/nav-bar';
 import NewRecipe from '@/components/new-recipe';
-import Image from 'next/image';
+import PageFooter from '@/components/page-footer';
 import React from 'react';
 import { useEffect, useState } from 'react';
 
@@ -31,6 +31,7 @@ export default function Home() {
     <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-between">
       <Navbar></Navbar>
       <NewRecipe></NewRecipe>
+      <PageFooter></PageFooter>
     </div>
   );
 }
