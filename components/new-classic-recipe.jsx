@@ -12,7 +12,7 @@ const defaultRecipe = {
     "instrucoes": "Prepare um expresso e adicione leite vaporizado, visando uma proporção maior de café na mistura."
   }
 const NewClassicRecipe = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([defaultRecipe]);
     const [recipe, setRecipe] = useState(defaultRecipe);
 
     const getAllRecipes = async() => {
