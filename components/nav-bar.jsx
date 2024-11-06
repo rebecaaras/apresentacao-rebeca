@@ -14,7 +14,7 @@ const Navbar = () => {
                     <Link href='/classic' legacyBehavior passHref>
                         <li className="cursor-pointer bg-slate-100 text-orange-950 rounded-[10px] p-2 h-10 w-30 hover:bg-orange-950 hover:text-orange-950 text-opacity-60 hover:font-bold hover:bg-opacity-10">Clássicos</li>
                     </Link>
-                    <Link href='' legacyBehaviour passHref>
+                    <Link href='/special' legacyBehaviour passHref>
                         <li className="cursor-pointer bg-slate-100 text-orange-950 rounded-[10px] p-2 h-10 w-30 hover:bg-orange-950 hover:text-orange-950 text-opacity-60 hover:font-bold hover:bg-opacity-10">Especiais</li>
                     </Link>
                     <Link href='/gourmet' legacyBehavior passHref>
